@@ -15,7 +15,12 @@ def veraddr():
         "server": "private-test",
         "status": "online"
     })
-
+@app.route("/login", methods=["POST"])
+def login():
+    return jsonify({
+        "success": True,
+        "message": "Login de prueba correcto"
+    })
 @app.route("/health")
 def health():
     return jsonify({
