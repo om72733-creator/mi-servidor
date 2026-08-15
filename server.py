@@ -1,0 +1,26 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def inicio():
+    return jsonify({
+        "status": "online"
+    })
+
+@app.route("/ver")
+def veraddr():
+    return jsonify({
+        "version": "1.0",
+        "server": "private-test",
+        "status": "online"
+    })
+
+@app.route("/health")
+def health():
+    return jsonify({
+        "status": "ok"
+    })
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
